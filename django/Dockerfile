@@ -46,10 +46,13 @@ ADD ./requirements.txt requirements.txt
 
 # Python3
 RUN apt-get -y update \
-    && apt-get install -y locales python3-distutils \
+    && apt-get install -y locales build-essential libffi-dev libssl-dev python3-distutils libpq-dev python3-dev libcairo2-dev postgresql-client \
     && curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py \
     && python3 get-pip.py \
     && pip install -U pip \
     && pip install -r requirements.txt
 
 WORKDIR /django
+
+ADD ./wait-for-postgres.sh /wait-for-postgres.sh
+RUN chmod +x /wait-for-postgres.sh
