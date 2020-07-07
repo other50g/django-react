@@ -54,5 +54,20 @@ RUN apt-get -y update \
 
 WORKDIR /django
 
+# Node.js
+RUN apt-get -y install \
+    && apt-get install -y nodejs npm
+RUN npm install n -g
+RUN n stable
+RUN apt purge -y nodejs npm
+
+# Yarn
+RUN curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add -
+RUN echo "deb https://dl.yarnpkg.com/debian/ stable main" | tee /etc/apt/sources.list.d/yarn.list
+
+RUN apt-get -y update \
+    && apt-get install -y yarn \
+    && set -U fish_user_paths (yarn global bin) $fish_user_paths
+
 ADD ./wait-for-postgres.sh /wait-for-postgres.sh
 RUN chmod +x /wait-for-postgres.sh
