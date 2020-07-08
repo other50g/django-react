@@ -3,11 +3,11 @@ import ReactDOM from 'react-dom';
 
 import TextForm from './Components/Common/TextForm';
 
-interface State {
-    value?: string|number
+type State = {
+    value?: string | number
 }
 
-interface Props {
+type Props = {
 
 }
 
@@ -23,7 +23,7 @@ class App extends React.Component<Props, State> {
     render() {
         return (
             <div>
-                <h1>Change Getter 1 Switch ON!</h1>
+                <h1>React RUN!</h1>
                 <h2>{ this.state.value }</h2>
                 <TextForm
                     label="テスト"

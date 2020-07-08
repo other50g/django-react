@@ -2,23 +2,22 @@ import React from 'react';
 
 import { TextField } from '@material-ui/core'
 
-interface Props {
+type Props = {
     label: string,
     onChange: (value: string|number) => void
 }
 
-class TextForm extends React.Component<Props> {
-    render() {
-        return (
-            <TextField
-                label={ this.props.label }
-                onChange={ this.input }
-            ></TextField>
-        )
+const TextForm: React.FC<Props> = props => {
+    const input = (e: React.ChangeEvent<HTMLTextAreaElement | HTMLInputElement>) => {
+        const value = e.target.value;
+        props.onChange(value);
     }
-    input = (e: React.ChangeEvent<HTMLTextAreaElement | HTMLInputElement>) => {
-        this.props.onChange(e.target.value);
-    }
+    return (
+        <TextField
+            label={ props.label }
+            onChange={ input }
+        ></TextField>
+    )
 }
 
 export default TextForm
