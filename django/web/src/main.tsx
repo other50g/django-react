@@ -34,7 +34,7 @@ class App extends React.Component<Props, State> {
                 <DatepickerForm
                     label="テスト"
                     value={ this.state.date_value }
-                    onChange={ this.setValue }
+                    onChange={ (value: string) => this.setState({ date_value: value }) }
                 ></DatepickerForm>
             </div>
         );
