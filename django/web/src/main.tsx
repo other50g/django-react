@@ -4,7 +4,6 @@ import ReactDOM from 'react-dom';
 import TextForm from './Components/Common/Form/TextForm';
 import DatepickerForm from './Components/Common/Form/DatepickerForm';
 import RadioGroupForm from './Components/Common/Form/RadioGroupForm';
-import Radio from './Components/Common/Form/Radio';
 
 type Option = {
     value: string|number,
@@ -50,10 +49,8 @@ class App extends React.Component<Props, State> {
                 ></DatepickerForm>
                 <RadioGroupForm
                     label="テスト"
+                    options={ this.state.options }
                 >
-                    { this.state.options?.map((option, index) => {
-                        return <Radio label={ option.text } value={ option.value } key={ index }></Radio>
-                    }) }
                 </RadioGroupForm>
             </div>
         );
