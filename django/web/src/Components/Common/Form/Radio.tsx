@@ -6,13 +6,15 @@ type Props = {
     label: string,
     value?: string | number,
     disabled?: boolean,
+    color?: 'primary' | 'secondary' | 'default',
 }
 
 const RadioForm: React.FC<Props> = props => {
+    const color = props.color == undefined ? 'primary' : props.color;
     return (
         <FormControlLabel
             value={ props.value }
-            control={ <Radio /> }
+            control={ <Radio color={ color } /> }
             label={ props.label }
         ></FormControlLabel>
     )
