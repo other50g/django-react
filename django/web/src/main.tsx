@@ -4,6 +4,7 @@ import ReactDOM from 'react-dom';
 import TextForm from './Components/Common/Form/TextForm';
 import DatepickerForm from './Components/Common/Form/DatepickerForm';
 import RadioGroupForm from './Components/Common/Form/RadioGroupForm';
+import SelectForm from './Components/Common/Form/SelectForm';
 
 type Option = {
     value: string|number,
@@ -52,6 +53,12 @@ class App extends React.Component<Props, State> {
                     options={ this.state.options }
                 >
                 </RadioGroupForm>
+                <SelectForm
+                    label="テスト"
+                    options={ this.state.options }
+                    value="1"
+                    onChange={ (value: string|number) => console.log(value) }
+                ></SelectForm>
             </div>
         );
     }
