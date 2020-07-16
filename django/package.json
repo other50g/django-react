@@ -20,11 +20,18 @@
   "scripts": {
     "dev": "webpack --mode development ./web/src/index.js --output ./web/static/main.js",
     "build": "webpack --mode production",
-    "watch": "webpack --mode development -w"
+    "watch": "webpack --mode development -w",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
   },
   "devDependencies": {
     "@material-ui/core": "^4.11.0",
     "@material-ui/pickers": "^3.2.10",
+    "@storybook/addon-actions": "^5.3.19",
+    "@storybook/addon-links": "^5.3.19",
+    "@storybook/addons": "^5.3.19",
+    "@storybook/cli": "^5.3.19",
+    "@storybook/react": "^5.3.19",
     "@types/react": "^16.9.41",
     "@types/react-dom": "^16.9.8",
     "ts-loader": "^7.0.5",
