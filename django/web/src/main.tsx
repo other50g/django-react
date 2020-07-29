@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import TextForm from './Components/Common/Form/TextForm';
+import { TextForm } from './Components/Common/Form/TextForm';
 import DatepickerForm from './Components/Common/Form/DatepickerForm';
 import RadioGroupForm from './Components/Common/Form/RadioGroupForm';
 import SelectForm from './Components/Common/Form/SelectForm';
