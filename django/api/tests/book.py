@@ -1,15 +1,15 @@
 import unittest
-from rest_framework.test import APIRequestFactory
+from django.test import TestCase
+from rest_framework import status
+from django.urls import reverse
 from ..models import Book
-from ..serializers import BookSerializer
+from ..views import BookViewSet
 
-class BookTestCase(unittest.TestCase):
+class BookTestCase(TestCase):
 
     def setUp(self):
         Book.objects.create(author='テスト', title='テスト', subtitle='テスト')
 
     def testIndex(self):
-        factory = APIRequestFactory()
-        request = factory.get('/book/')
-        
-
+        response = self.client.get(reverse('book-list'), content_type='application/json')
+        self.assertEqual(response.status_code, status.HTTP_200_OK)
