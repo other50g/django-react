@@ -2,18 +2,19 @@ asgiref==3.2.10
 certifi==2019.11.28
 chardet==3.0.4
 dbus-python==1.2.16
-distro-info===0.10
+distro-info==0.0.0
 Django==3.0.8
 djangorestframework==3.11.0
 idna==2.8
+numpy==1.19.1
+pandas==1.1.0
 psycopg2-binary==2.8.5
 pycairo==1.19.1
 PyGObject==3.36.0
-# python-apt==0.0.0
+python-dateutil==2.8.1
 pytz==2020.1
 requests==2.22.0
 requests-unixsocket==0.2.0
 six==1.14.0
 sqlparse==0.3.1
-# unattended-upgrades==0.1
 urllib3==1.25.8
